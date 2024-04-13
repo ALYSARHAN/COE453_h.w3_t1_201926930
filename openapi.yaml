@@ -1,0 +1,152 @@
+swagger: "2.0"
+info:
+  title: mySampleAPI
+  description: API Walk through.
+  version: 1.0.0
+
+host: myapigate.apigateway.assig3-418322.cloud.goog
+basePath: /
+schemes:
+  - https
+  - http
+
+paths:
+  /add:
+    post:
+      operationId: addition
+      summary: Perform addition operation.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: body
+          in: body
+          description: JSON object containing X and Y values
+          required: true
+          schema:
+            type: object
+            properties:
+              X:
+                type: number
+              Y:
+                type: number
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              X:
+                type: number
+              Y:
+                type: number
+              Result:
+                type: number
+      x-google-backend:
+        address: https://us-central1-assig3-418322.cloudfunctions.net/add-function
+
+  /sub:
+    post:
+      operationId: subtraction
+      summary: Perform subtraction operation.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: body
+          in: body
+          description: JSON object containing X and Y values
+          required: true
+          schema:
+            type: object
+            properties:
+              X:
+                type: number
+              Y:
+                type: number
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              X:
+                type: number
+              Y:
+                type: number
+              Result:
+                type: number
+      x-google-backend:
+        address: https://us-central1-assig3-418322.cloudfunctions.net/sub-function
+
+  /div:
+    post:
+      operationId: division
+      summary: Perform division operation.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: body
+          in: body
+          description: JSON object containing X and Y values
+          required: true
+          schema:
+            type: object
+            properties:
+              X:
+                type: number
+              Y:
+                type: number
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              X:
+                type: number
+              Y:
+                type: number
+              Result:
+                type: number
+      x-google-backend:
+        address: https://us-central1-assig3-418322.cloudfunctions.net/div-function
+
+  /mul:
+    post:
+      operationId: multiplication
+      summary: Perform multiplication operation.
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: body
+          in: body
+          description: JSON object containing X and Y values
+          required: true
+          schema:
+            type: object
+            properties:
+              X:
+                type: number
+              Y:
+                type: number
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              X:
+                type: number
+              Y:
+                type: number
+              Result:
+                type: number
+      x-google-backend:
+        address: https://us-central1-assig3-418322.cloudfunctions.net/mul-function
